@@ -14,5 +14,8 @@
 	"license": "MIT",
 	"dependencies": {
 		"holographics-client-sdk": "^1.6.1"
+	},
+	"devDependencies": {
+		"eslint": "^6.1.0"
 	}
 }
