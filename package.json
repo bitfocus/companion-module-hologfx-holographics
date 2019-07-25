@@ -13,6 +13,6 @@
   "author": "Floris Porro <floris@hologfx.io>",
   "license": "MIT",
   "dependencies": {
-    "holographics-client-sdk": "^1.5.3"
+    "holographics-client-sdk": "^1.6.1"
   }
 }
