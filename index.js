@@ -17,7 +17,7 @@ class instance extends instance_skel {
 			...presets
 		})
 
-		this.system.emit('instance_actions', this.id, this.getActions())
+		this.setActions(this.getActions())
 
 		return this
 	}
@@ -94,11 +94,10 @@ class instance extends instance_skel {
 			})
 		}
 
-		this.system.emit('instance_actions', this.id, this.getActions())
+		this.setActions(this.getActions())
 		this.initPresets()
 		this.initFeedbacks()
-		this.checkFeedbacks('widget_active')
-		this.checkFeedbacks('entry_active')
+		this.checkFeedbacks('widget_active', 'entry_active')
 	}
 
 	destroy () {
