@@ -17,5 +17,14 @@
 	},
 	"devDependencies": {
 		"eslint": "^6.1.0"
-	}
+	},
+	"homepage": "https://github.com/bitfocus/companion-module-hologfx-holographics#readme",
+	"bugs": {
+		"url": "https://github.com/bitfocus/companion-module-hologfx-holographics/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-hologfx-holographics.git"
+	},
+	"api_version": "1.0.0"
 }
