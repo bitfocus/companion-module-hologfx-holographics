@@ -31,7 +31,10 @@ module.exports = {
 									},
 								},
 							],
-							up: [
+							up: [],
+						},
+						{
+							down: [
 								{
 									actionId: 'setWidgetVisibility',
 									options: {
@@ -40,6 +43,7 @@ module.exports = {
 									},
 								},
 							],
+							up: [],
 						},
 					],
 					feedbacks: [
@@ -72,22 +76,26 @@ module.exports = {
 						{
 							down: [
 								{
-									action: 'setEntryVisibility',
+									actionId: 'setEntryVisibility',
 									options: {
 										visibility: true,
 										entry: entry.id,
 									},
 								},
 							],
-							up: [
+							up: [],
+						},
+						{
+							down: [
 								{
-									action: 'setEntryVisibility',
+									actionId: 'setEntryVisibility',
 									options: {
 										visibility: false,
 										entry: entry.id,
 									},
 								},
 							],
+							up: []
 						},
 					],
 					feedbacks: [
