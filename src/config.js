@@ -1,4 +1,4 @@
-const { Regex } = require('@companion-module/base')
+const { Regex, combineRgb } = require('@companion-module/base')
 
 module.exports = {
 	getConfigFields() {
@@ -86,6 +86,73 @@ module.exports = {
 			{
 				type: 'static-text',
 				id: 'hr2',
+				width: 12,
+				label: ' ',
+				value: '<hr />',
+			},
+			{
+				type: 'colorpicker',
+				id: 'color',
+				label: 'Preset Button Text/Foreground Color (Active)',
+				width: 3,
+				default: combineRgb(255, 255, 255),
+			},
+			{
+				type: 'static-text',
+				id: 'color-info',
+				label: 'Preset Button Text/Foreground Color (Active)',
+				width: 9,
+				value:
+					'This color will be used for the text on the preset buttons when the feedback is active.',
+			},
+			{
+				type: 'colorpicker',
+				id: 'bgcolor',
+				label: 'Preset Button Background Color (Active)',
+				width: 3,
+				default: combineRgb(255, 0, 0),
+			},
+			{
+				type: 'static-text',
+				id: 'bgcolor-info',
+				label: 'Preset Button Background Color (Active)',
+				width: 9,
+				value:
+					'This color will be used for the background of the preset buttons when the feedback is active.',
+			},
+			{
+				type: 'colorpicker',
+				id: 'color_inactive',
+				label: 'Preset Button Text/Foreground Color (Inactive)',
+				width: 3,
+				default: combineRgb(255, 255, 255),
+			},
+			{
+				type: 'static-text',
+				id: 'color-inactive-info',
+				label: 'Preset Button Text/Foreground Color (Inactive)',
+				width: 9,
+				value:
+					'This color will be used for the text on the preset buttons when the feedback is inactive.',
+			},
+			{
+				type: 'colorpicker',
+				id: 'bgcolor_inactive',
+				label: 'Preset Button Background Color (Inactive)',
+				width: 3,
+				default: combineRgb(0, 0, 0),
+			},
+			{
+				type: 'static-text',
+				id: 'bgcolor-inactive-info',
+				label: 'Preset Button Background Color (Inactive)',
+				width: 9,
+				value:
+					'This color will be used for the background of the preset buttons when the feedback is inactive.',
+			},
+			{
+				type: 'static-text',
+				id: 'hr3',
 				width: 12,
 				label: ' ',
 				value: '<hr />',

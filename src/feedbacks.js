@@ -24,7 +24,7 @@ module.exports = {
 					choices: self.WIDGETS,
 				},
 			],
-			defaultSyle: {
+			defaultStyle: {
 				color: foregroundColor,
 				bgcolor: backgroundColorRed,
 			},
@@ -48,7 +48,7 @@ module.exports = {
 					choices: self.ENTRIES,
 				},
 			],
-			defaultSyle: {
+			defaultStyle: {
 				color: foregroundColor,
 				bgcolor: backgroundColorRed,
 			},

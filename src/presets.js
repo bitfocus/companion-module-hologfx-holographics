@@ -2,11 +2,31 @@ const { combineRgb } = require('@companion-module/base')
 
 module.exports = {
 	initPresets: function () {
+		let self = this
+
 		let presets = []
 
-		const foregroundColor = combineRgb(255, 255, 255) // White
-		//const backgroundColorRed = combineRgb(255, 0, 0) // Red
-		const backgroundColorBlack = combineRgb(0, 0, 0) // Black
+		let foregroundColor_active = combineRgb(255, 255, 255) // White
+		let backgroundColor_active = combineRgb(255, 0, 0) // Red
+
+		let foregroundColor_inactive = combineRgb(255, 255, 255) // White
+		let backgroundColor_inactive = combineRgb(0, 0, 0) // Black
+
+		if (self.config.color) {
+			foregroundColor_active = self.config.color
+		}
+
+		if (self.config.bgcolor) {
+			backgroundColor_active = self.config.bgcolor
+		}
+
+		if (self.config.color_inactive) {
+			foregroundColor_inactive = self.config.color_inactive
+		}
+
+		if (self.config.bgcolor_inactive) {
+			backgroundColor_inactive = self.config.bgcolor_inactive
+		}
 
 		if (this.STATE && this.STATE.widgets) {
 			this.STATE.widgets.forEach((widget) => {
@@ -17,8 +37,8 @@ module.exports = {
 					style: {
 						text: widget.name === '' ? widget.type : widget.name,
 						size: '18',
-						color: foregroundColor,
-						bgcolor: backgroundColorBlack,
+						color: foregroundColor_inactive,
+						bgcolor: backgroundColor_inactive,
 					},
 					steps: [
 						{
@@ -52,6 +72,10 @@ module.exports = {
 							options: {
 								widget: widget.id,
 							},
+							style: {
+								color: foregroundColor_active,
+								bgcolor: backgroundColor_active,
+							},
 						},
 					],
 				})
@@ -69,8 +93,8 @@ module.exports = {
 					style: {
 						text: name,
 						size: '18',
-						color: foregroundColor,
-						bgcolor: backgroundColorBlack,
+						color: foregroundColor_inactive,
+						bgcolor: backgroundColor_inactive,
 					},
 					steps: [
 						{
@@ -103,6 +127,10 @@ module.exports = {
 							feedbackId: 'entry_active',
 							options: {
 								entry: entry.id,
+							},
+							style: {
+								color: foregroundColor_active,
+								bgcolor: backgroundColor_active,
 							},
 						},
 					],
