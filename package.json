@@ -10,11 +10,11 @@
 		"lint": "yarn lint:raw ."
 	},
 	"dependencies": {
-		"@companion-module/base": "~1.7.0",
+		"@companion-module/base": "~1.15.1",
 		"holographics-client-sdk": "^1.6.1"
 	},
 	"devDependencies": {
-		"@companion-module/tools": "^2.8.0",
+		"@companion-module/tools": "^2.9.1",
 		"eslint": "^6.1.0",
 		"prettier": "^3.2.5"
 	},
