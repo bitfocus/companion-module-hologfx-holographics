@@ -30,7 +30,7 @@ module.exports = {
 
 				let color = await self.parseVariablesInString(opt.color)
 
-				self.setColor(colorvar, color)
+				await self.setColor(colorvar, color)
 			},
 		}
 
@@ -58,7 +58,7 @@ module.exports = {
 				let color = splitRgb(opt.color)
 				let colorString = `rgba(${color.r},${color.g},${color.b},1)`
 
-				self.setColor(colorvar, colorString)
+				await self.setColor(colorvar, colorString)
 			},
 		}
 
@@ -76,7 +76,7 @@ module.exports = {
 			callback: async (action) => {
 				let opt = action.options
 
-				self.setTheme(opt.filename)
+				await self.setTheme(opt.filename)
 			},
 		}
 
@@ -104,7 +104,7 @@ module.exports = {
 			callback: async (action) => {
 				let opt = action.options
 
-				self.setWidgetVisibility(opt.widget, opt.visibility)
+				await self.setWidgetVisibility(opt.widget, opt.visibility)
 			},
 		}
 
@@ -193,7 +193,7 @@ module.exports = {
 				let width = await self.parseVariablesInString(opt.width)
 				let height = await self.parseVariablesInString(opt.height)
 
-				self.setWidgetStyle(
+				await self.setWidgetStyle(
 					opt.widget,
 					opt.horizontal_position,
 					horizontal_offset,
@@ -232,7 +232,7 @@ module.exports = {
 			callback: async (action) => {
 				let opt = action.options
 
-				self.setEntryVisibility(opt.entry, opt.visibility)
+				await self.setEntryVisibility(opt.entry, opt.visibility)
 			},
 		}
 

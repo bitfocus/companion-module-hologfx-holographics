@@ -78,19 +78,14 @@ module.exports = {
 				if (this.STATE && this.STATE.style) {
 					let color = this.STATE.style[feedback.options.color]
 					if (color) {
-						//returns a string like rgba(255, 255, 255, 0) and we need to convert it to an array
-						let colorArray = color.split(',')
+						// Holographics stores rgb(...), rgba(...) or #rrggbb
+						const rgb = color.startsWith('#')
+							? [1, 3, 5].map((i) => parseInt(color.slice(i, i + 2), 16))
+							: (color.match(/[\d.]+/g) || []).map(Number)
+						if (rgb.length < 3 || rgb.some(isNaN)) return {}
 
-						//remove the 'rgba(' and ')' from the string
-						colorArray[0] = colorArray[0].replace('rgba(', '')
-						colorArray[3] = colorArray[3].replace(')', '')
-
-						//return the color as an array of integers
-						colorArray = colorArray.map((color) => parseInt(color))
-
-						//return the color as a combined RGB value
 						return {
-							bgcolor: combineRgb(colorArray[0], colorArray[1], colorArray[2])
+							bgcolor: combineRgb(rgb[0], rgb[1], rgb[2]),
 						}
 					}
 				}

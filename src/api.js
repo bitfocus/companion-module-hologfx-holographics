@@ -16,6 +16,11 @@ module.exports = {
 			// Setup the socket connection to Holographics
 			self.Holographics = new sdk.Socket(`http://${self.config.host}:${self.config.port}`)
 
+			// The SDK emits 'error' for every rejected request; without a listener Node kills the process
+			self.Holographics.on('error', (err) => {
+				self.log('error', `Holographics rejected request: ${err.message || JSON.stringify(err)}`)
+			})
+
 			// Make sure we only have a single event listener
 			self.Holographics.socket.removeAllListeners('connect')
 			self.Holographics.socket.removeAllListeners('disconnect')
